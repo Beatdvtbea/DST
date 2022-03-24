@@ -1,0 +1,52 @@
+---
+title: "Page 1"
+author: "PERRAUD Louis"
+date: "24/03/2022"
+output: 
+  html_document: 
+    number_sections: yes
+    toc: yes
+editor_options: 
+  chunk_output_type: console
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(cache = TRUE)
+# Passer la valeur suivante à TRUE pour reproduire les extractions.
+knitr::opts_chunk$set(eval = TRUE)
+knitr::opts_chunk$set(warning = FALSE)
+```
+
+# Objet
+
+ceci est un modèle de script pour le projet final et support du cours 8.
+
+# Données
+
+```{r}
+data <- read.csv("data/noteDST.csv", header = T, fileEncoding = "UTF-8")
+data
+knitr::kable(data)
+```
+
+
+
+# Exercice
+
+Dans un chunk, faire un graphique à barre et un histogramme.
+
+Dans l'histogramme, essayer de changer les valeurs de la discrétisation.
+```{r}
+png("img/graph.png")
+par(mfrow = c(2,1))
+barplot(data$note.DST, names.arg = data$Prénom, las =2)
+hist(data$note.DST, breaks = c(0,2,4,20))
+dev.off()
+```
+
+![](img/graph.png)
+
+
+

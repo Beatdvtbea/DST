@@ -9,7 +9,7 @@ output:
 editor_options: 
   chunk_output_type: console
 ---
-
+Bonjour
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
